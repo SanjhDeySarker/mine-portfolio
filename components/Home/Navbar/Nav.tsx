@@ -4,9 +4,13 @@ import Link from "next/link";
 import { FaCode } from "react-icons/fa";
 import { BiDownload } from "react-icons/bi";
 import { Navlinks } from "@/constant/constant";
-import { HiMiniBars3BottomRight } from "react-icons/hi2";
+import { HiBars3BottomRight } from "react-icons/hi2";
 
-const Nav = () => {
+
+type props = {
+  openNav: () => void;
+}
+const Nav = ({openNav}: props) => {
   const [navBg, setNavBg] = useState(false);
 
   useEffect(() => {
@@ -60,7 +64,7 @@ const Nav = () => {
           </button>
 
           {/* Burger Menu */}
-          <HiMiniBars3BottomRight className="w-8 h-8 cursor-pointer text-white" />
+          <HiBars3BottomRight onClick={openNav} className="w-8 h-8 cursor-pointer text-white" />
         </div>
       </div>
     </div>
